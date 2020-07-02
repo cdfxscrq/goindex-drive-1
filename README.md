@@ -99,7 +99,7 @@ This project aims to provide a better UI for Google's Drive function and allows 
 - [ ] Sort function via three-dot (or hamburger) menu.
 - [ ] URL encode the download link
 - [ ] [JDownloader support](https://board.jdownloader.org/showthread.php?t=83613) including [logins](https://board.jdownloader.org/showthread.php?t=84669)
-- [] Remove ads from the [theme](https://github.com/Aicirou/goindex-theme-acrou), in the meantime you better use an ad-blocker (_I know you already use one_).
+- [ ] Remove ads from the [theme](https://github.com/Aicirou/goindex-theme-acrou), in the meantime you better use an ad-blocker (_I know you already use one_).
 - [x] Add Final / Beta branch
 - [x] Add refresh tokens support
 - [x] Add support for Support Http Basic Auth
