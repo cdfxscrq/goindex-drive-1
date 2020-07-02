@@ -101,7 +101,7 @@ function html(current_drive_order = 0, model = {}) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
   <title>${authConfig.siteName}</title>
   <style>
-    @import url(https://cdn.jsdelivr.net/gh/CHEF-KOCH/goindex-drivemaster/goindex-acrou/dist/style.min.css);
+    @import url(https://cdn.jsdelivr.net/gh/CHEF-KOCH/goindex-drive@master/goindex/dist/style.min.css);
   </style>
   <script>
     window.gdconfig = JSON.parse('${JSON.stringify({
