@@ -118,7 +118,7 @@ function html(current_drive_order = 0, model = {}) {
 </head>
 <body>
     <div id="app"></div>
-    <script src="https://cdn.jsdelivr.net/gh/CHEF-KOCH/goindex-drivemaster/goindex-acrou/dist/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/CHEF-KOCH/goindex-drive@master/goindex/dist/app.min.js"></script>
 </body>
 </html>
 `;
