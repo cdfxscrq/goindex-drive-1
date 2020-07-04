@@ -25,12 +25,12 @@ This project aims to provide a better UI for Google's Drive function and allows 
 
 
 ### Main Features
-* Choose from a Light or Dark (_default_) Themes main theme
-* Choose from multiple borders colours
-* Integrated Search function
+* Choose between a Light or Dark (_default_) theme.
+* Choose from multiple borders colours.
+* Integrated Search function.
 * Playable Audio/Video files for e.g. mp4 files without the need to download them to preview it.
-* Works with GDrive/ShareDrive (prev. known as TeamDrive)
-* Multi-level Search within the team drive
+* Works with GDrive/ShareDrive (prev. known as TeamDrive).
+* Multi-level Search within your Share Drive.
 * Basic Encryption support (_does not include rclone based encryption/decryption_)
 
 
@@ -98,6 +98,8 @@ This project aims to provide a better UI for Google's Drive function and allows 
 - [ ] Multi-language support.
 - [ ] Sort function via three-dot (or hamburger) menu.
 - [ ] URL encode the download link
+- [ ] Folderslash issues.
+- [ ] Replace Video Flash player with HTML5 one.
 - [ ] [JDownloader support](https://board.jdownloader.org/showthread.php?t=83613) including [logins](https://board.jdownloader.org/showthread.php?t=84669)
 - [ ] Remove ads from the [theme](https://github.com/Aicirou/goindex-theme-acrou), in the meantime you better use an ad-blocker (_I know you already use one_).
 - [x] Add Final / Beta branch
@@ -119,12 +121,12 @@ This project aims to provide a better UI for Google's Drive function and allows 
 
 ## Setup Cloudfare Workers
 * Go to the [official CloudFlare Workers Website](https://workers.cloudflare.com/).
-* Sign-up (free) using your email and password enter a subdomain `<-your-name->_.workers.dev` and click `Set up`.
+* Sign-up (it's free) using your eMail & password and enter a subdomain name `<-your-name->_.workers.dev` and then click `Set up`.
 
 **Now verify your current Worker**
 
-* Verify Email Goto Workers, press `Create a Worker`.
-* Now copy the Content of the [index.js](https://github.com/CHEF-KOCH/goindex-drive/blob/master/goindex/go2index/index.js) to the script section
+* Verify your eMail and go to `Workers`, press `Create a Worker`.
+* Now copy the content of the [index.js](https://github.com/CHEF-KOCH/goindex-drive/blob/master/goindex/go2index/index.js) to the script section.
 
 * Edit this object in the script with the details you generated above
 ```js
@@ -137,50 +139,50 @@ var authConfig = {
     "client_id": "****************************.apps.googleusercontent.com", // client_id from rclone config
     "client_secret": "*******************", // client_secret from rclone config
     "refresh_token": "******************************************", // authorized refresh token from rclone config
-    "root": "0AG1OSyxjvYcLUk9PVA" // ROOT_FOLDER from rclone config,
+    "root": "0AG1OSyxjvYcLUk9PVA" // ROOT_FOLDER from rclone config
 };
 ```
 
-**Need to know**
-* If you have binded Share Drive (Teamdrive) with rclone then make sure you specify the TeamDrive's root folder. For example `"root": "0AG1OSyxjvYcLUk9PVA"`.
+**What you need to know**
+* If you have connected Share Drive (Team Drive) with rclone then make sure you specify the Share Drive's root folder. For example `"root": "0AG1OSyxjvYcLUk9PVA"`.
 * If you want to use `My Drive` then simply write "root". For Example `"root": "root"`.
 * Each time you make a commit/deploy to a file its HASH will change. To access the new file you have to specify the hash OR keep it default with `"hash" : "master"`.
 
 
 ### CloudFlare Workers Limits
-* FREE - 10000 request/day
+* FREE - 100k request per day (that is what you typically choose)
 * $5/month - 10M requests/month
 
 
 ## Self-Hosting
 
 ## Obtaining the client ID & client secret
-* Log into the [Google API Console](https://console.developers.google.com/) with your Google account. It doesn’t matter which Google account you use but it need not be the same account as the Google Drive you want to access.
+* Log into the [Google API Console](https://console.developers.google.com/) with your Google account. It doesn’t matter which Google account you use but it need not be the same account as the Google Team Drive Drive you want to access.
 * Select a project or create a `new project`.
-* Under “ENABLE APIS AND SERVICES” search for “Drive”, and enable the “Google Drive API”.
+* Under `ENABLE APIS AND SERVICES` search for `Drive`, and enable the `Google Drive API`.
 * Click `Credentials` ([this one](https://console.developers.google.com/apis/credentials/oauthclient)) in the left-side panel **DO NOT** click on `Create credentials` because this will only open a setup wizard).
-* It will prompt you to set the OAuth consent screen product name, if you haven’t set one already.
-* OAuth Consent Screen > User Type > External > Application Name
-* Click “Credentials” in the left-side panel, then “Create credentials”, then “OAuth client ID”.
-* Choose an application type of “other”, and click “Create”. (the default name is fine)
+* It will prompt you to set the `OAuth` consent screen product name, if you haven’t set one already.
+* Click `OAuth Consent Screen` > `User Type` > `External` > `Application Name`.
+* Click `Credentials` in the left-side panel, then `Create credentials`, then `OAuth client ID`.
+* Choose an application type `other`, and click `Create`, _the default name is fine_.
 
-It will show you a `client ID` and `client secret`. Use these values in rclone config to add a new remote or edit an existing remote
+It will show you a `client ID` and `client secret`. Use these values in rclone config to add a new remote or edit an existing remote.
 
 
 ### Manually deploy via rclone
 1. Install [rclone](https://github.com/rclone/rclone) software locally.
-2. Follow the gien instructions under [https://rclone.org/drive/](https://rclone.org/drive/) to bind a drive.
+2. Follow the given instructions under [https://rclone.org/drive/](https://rclone.org/drive/) to bind a drive.
 3. Execute the `commandrclone config file` to find the file `rclone.conf path`.
 4. Open `rclone.conf`,find the configuration `root_folder_id` and `refresh_token`.
-5. Download `index.js` in [https://github.com/CHEF-KOCH/goindex-drive/blob/master/goindex/go2index/index.js](https://github.com/CHEF-KOCH/goindex-drive/blob/master/goindex/go2index/index.js) and fill in root and refresh_token.
-6. Deploy the code to [Cloudflare Workers](https://workers.cloudflare.com).
+5. Download `index.js` in [https://github.com/CHEF-KOCH/goindex-drive/blob/master/goindex/go2index/index.js](https://github.com/CHEF-KOCH/goindex-drive/blob/master/goindex/go2index/index.js) and fill in `root` and `refresh_token`.
+6. Deploy the code via [Cloudflare Workers](https://workers.cloudflare.com).
 
 
 ## Build Instructions
 
 ### GoIndex Auto Code Builder
 
-You can use the following pages to generate your own `index.js` (the file you need for the CloudFlare part)
+You can use the following pages to generate your own `index.js` (the file you need for the CloudFlare Workers part).
 
 Follow the instructions provided over [here](https://g-index.glitch.me) another mirror can be found over [here](https://gencode.ve.workers.dev) or [here](https://goindex.glitch.me/).
 
@@ -189,16 +191,36 @@ Follow the instructions provided over [here](https://g-index.glitch.me) another 
 
 ### How to use Share Drive (previously known as TeamDrive) instead of your normal Drive?
 * Copy your shared drive ID `DriveURL/drive/folders/<unique-ID>` (example: `1ffgFstW0fotDfDNlU9fyNiEstrWy3b6s` the [random folder ID](https://pirate.london/g-suite-team-drive-sharing-yes-you-can-not-you-cant-yes-you-can-db0a4e3e6220) is your folder) and set it as your root dir.
-* **DO NOT** copy the whole URL `DriveURL/drive/folders/` you only need the specific and unique folder ID!
+* **DO NOT** copy the whole URL `DriveURL/drive/folders/` URL, you only need the specific and unique folder ID!
 
 
-### How to add password to your Google Index ?
+### How to add password to your Google Index?
 
 * Login into your CloudFlare account.
 * Open the dashboard and click on Workers.
 * Tap on Quick Edit on right corner (just beside Rename)
 * In the Script tab - find `user` and `pass` (they're in the roots field).
 * That's it. Fill them up and lock your index!
+
+
+### Why can't I watch videos within the Browser?
+
+Because it currently uses Adobe Flash which is blocked by default (end-of-life product) in all Browsers. I'm working on a secure replacement.
+
+
+### I see ads while watching videos with a Adobe Flash supported Browsers!
+
+Ads are rarely visible within the video, they are coming from the Theme. I'm going to remove that, in the meantine use an ad-blocker.
+
+
+### What does `0:/` means?
+
+The 0:/ part indicates that external users do not have root rights (normal users) [it's only relevant if you add more than one team Drive and use a Password to protect the root dir.
+
+
+### What is Error 1027?
+
+This means your rate limit was reached (100k hits per day).
 
 
 ### Screenshot
@@ -215,7 +237,7 @@ Follow the instructions provided over [here](https://g-index.glitch.me) another 
 
 ## Credits
 * Based on the [original project](https://github.com/donwa/goindex) (_now offline_)
-* Forked from [kulokenci/goindex-drive](https://github.com/kulokenci/goindex-drive)
+* Forked from [kulokenci/goindex-drive](https://github.com/kulokenci/goindex-drive) (_now offline_)
 * Search Base: [w3Schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_list)
 * Search Function: [MakItWeb](https://makitweb.com/jquery-search-text-in-the-element-with-contains-selector/)
 * Source: [LeeluPradhan/G-Index](https://github.com/LeeluPradhan/G-Index), the Chinese code can be found over [here](https://github.com/yanzai/goindex)
