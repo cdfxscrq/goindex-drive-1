@@ -17,7 +17,11 @@ This project aims to provide a better UI for Google's Drive function and allows 
   * [GoIndex Auto Code Builder](#goindex-auto-code-builder)
 * [FAQ](#faq)
   * [How to use Share Drive (previously known as TeamDrive) instead of your normal Drive?](#how-to-use-share-drive-previously-known-as-teamdrive-instead-of-your-normal-drive)
-  * [How to add password to your Google Index ?](#how-to-add-password-to-your-google-index-)
+  * [How to add password to your Google Index?](#how-to-add-password-to-your-google-index)
+  * [Why can't I watch videos within the Browser?](#why-cant-i-watch-videos-within-the-browser)
+  * [I see ads while watching videos with a Adobe Flash supported Browsers!](#i-see-ads-while-watching-videos-with-a-adobe-flash-supported-browsers)
+  * [What does `0:/` means?](#what-does-0-means)
+  * [What is Error 1027?](#what-is-error-1027)
   * [Screenshot](#screenshot)
 * [Tutorial Guides for beginners](#tutorial-guides-for-beginners)
 * [Credits](#credits)
@@ -236,8 +240,6 @@ This means your rate limit was reached (100k hits per day).
 
 
 ## Credits
-* Based on the [original project](https://github.com/donwa/goindex) (_now offline_)
-* Forked from [kulokenci/goindex-drive](https://github.com/kulokenci/goindex-drive) (_now offline_)
 * Search Base: [w3Schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_filter_list)
 * Search Function: [MakItWeb](https://makitweb.com/jquery-search-text-in-the-element-with-contains-selector/)
 * Source: [LeeluPradhan/G-Index](https://github.com/LeeluPradhan/G-Index), the Chinese code can be found over [here](https://github.com/yanzai/goindex)
@@ -245,6 +247,7 @@ This means your rate limit was reached (100k hits per day).
 * Source: [alx-xlx / goindex](https://github.com/alx-xlx/goindex/)
 * Source: [maple3142](https://github.com/maple3142/GDIndex)
 * Video: [INDIA - Create Google Drive Index using CloudFlare Workers](https://www.youtube.com/watch?v=8WMddzVX1Dw)
+* Worker Script (Multiple Google Accounts) : [index-multiple-accounts.js](https://github.com/alx-xlx/goindex/blob/master/goindex-acrou/go2index/index-multiple-accounts.js)
 
 
 ## License
